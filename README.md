@@ -25,7 +25,6 @@ cd HideFaces
 # Example
 - A
 - B
-- C
 ```
 
 
