@@ -10,6 +10,14 @@ Author: Tomasz Palczewski
 
 - My main goal was to build a pipeline that tests different Deep Learning algorithms available on the market and study their efficiency / misclassification examples for the specific task of face anonymization   
 
+-
+
+
+<p align="center">
+  <img src="your_relative_path_here" width="350" title="hover text">
+  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+</p>
+
 
 ## Setup
 - Clone repo
@@ -21,7 +29,7 @@ cd HideFaces
 ## Requisites
 - To download all needed requisites
 ```
-pip install -r requirements.txt
+pip install -r build/requirements.txt
 ```
 
 
