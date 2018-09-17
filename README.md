@@ -19,11 +19,9 @@ cd HideFaces
 ```
 
 ## Requisites
-- List all packages and software needed to build the environment
-- This could include cloud command line tools (i.e. gsutil), package managers (i.e. conda), etc.
+- To download all needed requisites
 ```
-# Example
-- A
+pip install -r requirements.txt
 ```
 
 
