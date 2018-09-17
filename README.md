@@ -14,7 +14,7 @@ Author: Tomasz Palczewski
 
 
 <p align="center">
-  <img src="static/Images-AT.001.jpeg" width="350" title="Now you see me (left), Now you don't (right)">
+  <img src="static/Images-AT.001.jpeg" width="80%" title="Now you see me (left), Now you don't (right)">
 </p>
 
 
