@@ -14,8 +14,8 @@ Author: Tomasz Palczewski
 ## Setup
 - Clone repo
 ```
-
-
+git clone https://github.com/tpalczew/HideFaces.git
+cd HideFaces
 ```
 
 ## Requisites
