@@ -1,0 +1,7 @@
+numpy
+cv2
+matplotlib
+tensorflow
+keras
+unittest
+Flask
