@@ -16,7 +16,6 @@ def load_pictures_for_predictions(img, ):
 
 
 
-
 def load_pictures_for_tuning(img, labels):
     """ Load pictures with labels for fine tuning"""
     img = load_img(img, target_size=(224, 224))

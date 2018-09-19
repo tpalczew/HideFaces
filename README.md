@@ -1,7 +1,7 @@
 # HideFaces.AI
 Author: Tomasz Palczewski
 
-## Motivation for this project format:
+## Motivation for this project:
 - “Dealing with privacy, both legal requirements and social norms, is hard but necessary” John Hanke, director of Google Earth and Google Maps
 
 - Extremely hard task that has not been really fully solved so far as even one missed detection may have a huge legal consequences
@@ -9,9 +9,6 @@ Author: Tomasz Palczewski
 ## Main Goal
 
 - My main goal was to build a pipeline that tests different Deep Learning algorithms available on the market and study their efficiency / misclassification examples for the specific task of face anonymization   
-
--
-
 
 <p align="center">
   <img src="static/Images-AT.001.jpeg" width="80%" title="Now you see me (left), Now you don't (right)">
@@ -31,6 +28,10 @@ cd HideFaces
 pip install -r build/requirements.txt
 ```
 
+## Environment Settings
+```
+source ./build/environment.sh
+```
 
 
 ## Test
