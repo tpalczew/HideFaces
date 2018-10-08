@@ -8,7 +8,8 @@ Author: Tomasz Palczewski
 
 ## Main Goal
 
-- My main goal was to build a pipeline that tests different Deep Learning algorithms available on the market and study their efficiency / misclassification examples for the specific task of face anonymization   
+- My main goal was to build a pipeline that tests different Deep Learning algorithms available on the market and study their efficiency / misclassification examples for the specific task of face anonymization. In this project, Idecided to implement and test two algorithms: Haar Cascade Classifier and You Only Look Once (YOLO) deep learning single stage detector. 
+To produce a minimum viable product quickly, I decide to use previously trained Haar Classifier (trained on frontal face images). The YOLO implementation is based on Keras (high-level neural networks API). I decided to performe transfer learning for YOLO model pretrained on COCO Dataset.     
 
 <p align="center">
   <img src="static/Images-AT.001.jpeg" width="80%" title="Now you see me (left), Now you don't (right)">
@@ -35,13 +36,17 @@ source ./build/environment.sh
 
 
 ## Test
-- Include instructions for how to run all tests after the software is installed
+- All tests are placed in the tests directory. To run tests:
 ```
-# Example
+cd tests
+python tests.py
+```
+as an output one should see a similar output:
+<p align="center">
+  <img src="static/test_out.jpeg" width="80%">
+</p>
 
-# Step 1
-# Step 2
-```
+
 
 ## Run Inference
 - Include instructions on how to run inference
