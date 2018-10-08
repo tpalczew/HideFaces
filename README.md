@@ -54,25 +54,17 @@ as an output one should see a similar output:
 
 
 ## Run Inference
-- Include instructions on how to run inference
-- i.e. image classification on a single image for a CNN deep learning project
+Face detection and blurring on a single image may be performed using command line script
 ```
-# Example
+python app.py --infile /dir/subdir/file.jpg --outfile /dir/subdir/file_blur.jpg --blur blur_type --model model_type
+```
+available blur types are as follows: Median Blur (use medianBlur), Gaussian Blur (use GaussianBlur), Bilateral Filter (use bilateralFilter), Averaging (use blur). The default blur is a Median Blur. 
 
-# Step 1
-# Step 2
-```
+there are two models that can be used to detect faces: Haar Cascade Classifier (use haar) or YOLO (use yolov2).
+The default model is a Haar Cascade Classifier
 
 
 ## Serve Model
-- Include instructions of how to set up a REST or RPC endpoint
-- This is for running remote inference via a custom model
-```
-# Example
-
-# Step 1
-# Step 2
-```
 
 ## Analysis
 - Include some form of EDA (exploratory data analysis)
