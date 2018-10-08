@@ -43,7 +43,7 @@ python tests.py
 ```
 as an output one should see a similar output:
 <p align="center">
-  <img src="static/test_out.jpeg" width="80%">
+  <img src="static/test_out.png" width="80%">
 </p>
 
 
