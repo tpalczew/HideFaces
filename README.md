@@ -10,7 +10,9 @@ Author: Tomasz Palczewski
 
 - My main goal was to build a pipeline that tests different Deep Learning algorithms available on the market and study their efficiency / misclassification examples for the specific task of face anonymization. In this project, Idecided to implement and test two algorithms: Haar Cascade Classifier and You Only Look Once (YOLO) deep learning single stage detector. 
 To produce a minimum viable product quickly, I decide to use previously trained Haar Classifier (trained on frontal face images). 
-If you like to train Haar from scratch this post presents in detail all necessary steps: 
+
+
+If you would like to train Haar from scratch this post presents in detail all necessary steps: 
 
 [https://memememememememe.me/post/training-haar-cascades](https://memememememememe.me/post/training-haar-cascades/)
  
