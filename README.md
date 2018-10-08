@@ -31,7 +31,7 @@ pip install -r build/requirements.txt
 The project was developed and tested on AWS E2 instance using Deep Learning AMI (Ubuntu) Version 15.0 (ami-0b43cec40e1390f34)
 using python3.
 
-The pip freez for this specific setting is shown here. 
+The pip freez for this specific setting is shown [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt)
 
 
 ## Environment Settings
