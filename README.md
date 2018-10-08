@@ -58,9 +58,9 @@ Face detection and blurring on a single image may be performed using command lin
 ```
 python app.py --infile /dir/subdir/file.jpg --outfile /dir/subdir/file_blur.jpg --blur blur_type --model model_type
 ```
-available blur types are as follows: Median Blur (use medianBlur), Gaussian Blur (use GaussianBlur), Bilateral Filter (use bilateralFilter), Averaging (use blur). The default blur is a Median Blur. 
+Available blur types are as follows: Median Blur (use medianBlur), Gaussian Blur (use GaussianBlur), Bilateral Filter (use bilateralFilter), Averaging (use blur). The default blur is a Median Blur. 
 
-there are two models that can be used to detect faces: Haar Cascade Classifier (use haar) or YOLO (use yolov2).
+There are two models that can be used to detect faces: Haar Cascade Classifier (use haar) or YOLO (use yolov2).
 The default model is a Haar Cascade Classifier
 
 
