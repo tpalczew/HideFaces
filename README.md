@@ -77,6 +77,15 @@ The default model is a Haar Cascade Classifier
 
 ## Serve Model
 
+I prepared the Flask webapp with a  
+
+## Datasets & Data Augmentation
+
+At the end, I decided to only focus on examples from three datasets: WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and own pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
+and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I haven't perfrmed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use  
+this git-hub repo [link](https://github.com/Paperspace/DataAugmentationForObjectDetection)
+
+
 ## Analysis
 - Include some form of EDA (exploratory data analysis)
 - And/or include benchmarking of the model and results
