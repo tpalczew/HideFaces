@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('predict') }}" method="POST"
+                                            enctype="multipart/form-data">
+        <div class="form-group">
+           <label for="model">Select Model To Use:</label>
+          <select class="form-control" name="model" id="model">
+            <option value="cascade"> Cascade  </option>
+            <option value="yolo"> Yolo  </option>
+            <option value="ssd">  Ssd  </option>
+          </select>
+            <label for="blur">Select Blur To Use:</label>
+            <select class="form-control" name="blur" id="blur">
+              <option value="medianBlur"> Median Blur  </option>
+              <option value="GaussianBlur"> GaussianBlur  </option>
+              <option value="bilateralFilter"> Bilateral Filter  </option>
+              <option value="blur"> Average Blur  </option>
+            </select>
+            <label for="fileupload">Select File:</label>
+            <input type="file" name="file[]" multiple="" id='fileupload'>
+            <p class="help-block">Image types only</p>
+            <label class="btn btn-primary">
+                Upload <input type="submit" value="Upload" style="display:
+                none;">
+            </label>
+        </div>
+    </form>
+
+
+
+{% endblock %}

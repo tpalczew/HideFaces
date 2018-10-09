@@ -1,19 +1,27 @@
 import os
 import cv2
+import numpy as np
 
 try:
-   base_dir = os.environ.get("BASE_DIR")
-   print(base_dir)
+   base_dir = os.environ["BASE_DIR"]
 except KeyError:
    print("Not exist environment variable %s" % "try sourcing build/environment.sh")
 
 
-def load_pictures(img, LABELS????):
-    """ Load pictures """
-    img = img
-    img_array = cv2.imread(img, cv2.IMREAD_COLOR)
-    img_array = cv2.resize(img_array,(224,224))   # what about bounding boxes ???
-    rgb_image = cv2.cvtColor(img_array, cv2.COLOR_BGR2RGB)
-    gray = cv2.cvtColor(img_array, cv2.COLOR_BGR2GRAY)
-    img_shape = rgb_image.shape
-    return img_array, rgb_image, gray, img_shape
+def load_pictures_haar(img):
+    """ Load pictures for predictions (Haar)"""
+    image = cv2.imread(img)
+    img_arr = cv2.resize(image,(224,224))
+    gray = cv2.cvtColor(img_arr, cv2.COLOR_BGR2GRAY)
+    rgb_image = cv2.cvtColor(img_arr, cv2.COLOR_BGR2RGB)
+    img_shape = img_arr.shape
+    return image, img_arr, gray, img_shape
+
+def load_pictures_yolo(img):
+    """ Load pictures for predictions (YOLO)"""
+    image = cv2.imread(img)
+    input_image = cv2.resize(image, (416, 416))
+    input_image = input_image / 255.
+    input_image = input_image[:,:,::-1]
+    input_image = np.expand_dims(input_image, 0)
+    return image, input_image

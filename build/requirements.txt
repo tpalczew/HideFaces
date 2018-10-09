@@ -1,7 +1,12 @@
 numpy
-cv2
+opencv-python
 matplotlib
 tensorflow
+tensorflow-gpu
 keras
 unittest
 Flask
+optparse
+tqdm
+imgaug
+Pillow
