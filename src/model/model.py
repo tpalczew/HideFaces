@@ -50,6 +50,8 @@ def Blur(image, faces, blur_mode):
             bounded_face = cv2.bilateralFilter(bounded_face,500,100,100)
         if blur_mode == "blur":
             bounded_face = cv2.blur(bounded_face,(15,15))
+        if blur_mode == "none":
+            bounded_face = cv2.rectangle(image, (xmin,ymin), (xmax,ymax), (0,255,0), 3)
         image[y:y+bounded_face.shape[0], x:x+bounded_face.shape[1]] = bounded_face
         x, y, w,h = [0,0,0,0]
     rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
