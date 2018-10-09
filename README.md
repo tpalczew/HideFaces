@@ -77,12 +77,52 @@ The default model is a Haar Cascade Classifier
 
 ## Serve Model
 
-I prepared the Flask webapp with a  
+I prepared the Flask webapp that you can run as follows:
+
+```
+python app_flask.py
+```
+than browse to http://localhost:5000 and you should see an option to a select model, blur type, and upload your picture. 
+
+<p align="center">
+  <img src="static/flask.png" width="80%">
+</p>
+
 
 ## Datasets & Data Augmentation
 
 At the end, I decided to only focus on examples from three datasets: WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and own pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
 and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I haven't perfrmed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this git-hub repo [link](https://github.com/Paperspace/DataAugmentationForObjectDetection)
+
+
+## Transfer learning for YOLO
+
+The script, retrain_yolo_v2.py, to retrain yolo algorithm is located in 
+
+src/preprocess
+
+it needs yolo coco weights, yolo.weights, that should be located in data/preprocessed/model_weights/ directory
+
+Images and annotations for re-training should be located as follows:
+
+train image folder = /data/raw/face/large/train/
+
+train annotation folder = /data/raw/face/large/train_ann/
+
+valid image folder = /data/raw/face/large/val/
+
+valid annotation folder = /data/raw/face/large/val_ann/
+
+To run retraining script:
+```
+python retrain_yolo_v2.py --out_model serialized_model_to_json --out_weights serialized_weights --out_full serialized_full_model
+```
+
+it will also store all the configuration information to /data/preprocessed/config_yolo.json
+
+
+
+
 
 
 ## Project presentation
