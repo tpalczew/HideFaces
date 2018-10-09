@@ -82,7 +82,7 @@ I prepared the Flask webapp that you can run as follows:
 ```
 python app_flask.py
 ```
-than browse to http://localhost:5000 and you should see an option to a select model, blur type, and upload your picture. 
+than browse to http://localhost:5000 and you should see options to a select model, blur type, and upload your picture. 
 
 <p align="center">
   <img src="static/flask.png" width="80%">
