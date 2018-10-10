@@ -27,7 +27,7 @@ The YOLO implementation is based on Keras (high-level neural networks API). I de
 </p>
 
 
-## Setup, requisites, environment Settings, and tests
+## Setup, requisites, environment settings, and tests
 - To clone repo, set environment variables and install needed libraries
 ```
 git clone https://github.com/tpalczew/HideFaces.git
