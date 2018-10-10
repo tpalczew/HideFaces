@@ -7,7 +7,7 @@ Author: Tomasz Palczewski
 
 - I decided to implement and test two algorithms: 
 
-  - Simple Machine Learning algorithm, Haar Cascade Classifier, that is commonly used in business aplication. This choice was motivated by the simplicity of approach and time constraints. I wanted to obtain a minimum viable product quickly and from this point move on to more sophisticated and challenging approaches. I decide to use previously trained Haar Classifier (trained on frontal face images). 
+  - Simple Machine Learning algorithm, Haar Cascade Classifier, that is commonly used in business aplications. This choice was motivated by the simplicity of approach and time constraints. I wanted to obtain a minimum viable product quickly and from this point move on to more sophisticated and challenging approaches. I decide to use previously trained Haar Classifier (trained on frontal face images). 
  
   - Deep Learning algorithm from single stage detectors family, You Only Look Once (YOLO) deep learning single stage detector. 
 
