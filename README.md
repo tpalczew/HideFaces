@@ -9,7 +9,7 @@ Author: Tomasz Palczewski
 
   - Simple Machine Learning algorithm, Haar Cascade Classifier, that is commonly used in business aplications. This choice was motivated by the simplicity of approach and time constraints. I wanted to obtain a minimum viable product quickly and from this point move on to more sophisticated and challenging approaches. I decide to use previously trained Haar Classifier (trained on frontal face images). 
  
-  - Deep Learning algorithm from single stage detectors family, You Only Look Once (YOLO) deep learning single stage detector. 
+  - Deep Learning algorithm, from single stage detectors family, You Only Look Once (YOLO). 
 
 
 If you would like to train Haar from scratch this post presents in detail all necessary steps: 
