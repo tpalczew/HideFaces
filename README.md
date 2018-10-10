@@ -1,5 +1,6 @@
 # [HideFaces.AI](http://bit.ly/HideFaces) 
 [http://bit.ly/HideFaces](http://bit.ly/HideFaces)
+
 Author: Tomasz Palczewski, AI Fellow at [Insight Data Science](https://www.insightdata.ai)
 
 ## Main Goal
