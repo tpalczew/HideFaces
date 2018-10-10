@@ -3,16 +3,16 @@ Author: Tomasz Palczewski
 
 ## Main Goal
 
-- The main goal was to build a pipeline that tests different object detection algorithms that might be used for an automatic anonimization of faces in still pictures
+- I built a pipeline that tests different object detection algorithms that will be used for hiding the identity of persons within the uploaded still pictures.
 
-- I decided to implement and test two algorithms: 
+- I implemented and tested two algorithms: 
 
-  - Simple Machine Learning algorithm, Haar Cascade Classifier, that is commonly used in business aplications. This choice was motivated by the simplicity of approach and time constraints. I wanted to obtain a minimum viable product quickly and from this point move on to more sophisticated and challenging approaches. I decide to use previously trained Haar Classifier (trained on frontal face images). 
+  - A standard computer vision algorithm, the Haar cascade classifier, commonly used in business aplications. This choice is motivated by the simplicity of approach and time constraints. This served as my minimum viable product and baseline that is compared to more sophisticated and challenging approaches. The Haar cascade classifier used in this project was previously trained on frontal face images. 
  
-  - Deep Learning algorithm, from single stage detectors family, You Only Look Once (YOLO). 
+  - A state-of-the-art deep learning algorithm, from the single stage detector family, You Only Look Once (YOLO). YOLO looks at the whole image at test time so its predictions are informed by global context in the image. In the same time a single neural network predicts bounding boxes and class probabilities directly that allows to perform end-to-end optimization directly on detection performance. 
 
 
-If you would like to train Haar from scratch this post presents in detail all necessary steps: 
+If one would like to train Haar from scratch, this post presents all necessary steps in detail: 
 
 [https://memememememememe.me/post/training-haar-cascades](https://memememememememe.me/post/training-haar-cascades/)
  
@@ -37,25 +37,27 @@ pip install -r build/requirements.txt
 ```
 
 This project was developed and tested on AWS E2 instance using Deep Learning AMI (Ubuntu) Version 15.0 (ami-0b43cec40e1390f34)
-using python3. The pip freez for this specific setting is shown [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt)
+using python3. The pip freez for this specific setting can be found [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt).
 
-- All tests are placed in the HideFaces/tests/ directory. To run tests:
+- All tests are placed in the HideFaces/tests/ directory. The tests.py script runs all tests:
 ```
 cd tests
 python tests.py
 ```
-as an output one should see a similar output:
+as an output one should see a similar information:
 <p align="center">
   <img src="static/test_out.png" width="80%">
 </p>
-This scrip will perform nine different simple tests of different parts of the code such as tests of
+
+The tests.py scrip performs nine different tests that target different parts of the code. The tested parts are as follows:
+
 - function to calculate an intersection over union value for two bounding boxes
 
 - interval overlap function that is used during the calculation of an intersection over union value
 
 - sigmoid and softmax functions
 
-- correctnes of the data shapes after preprocessing process
+- correctnes of the data shapes (for both algorithms: Haar and YOLO) after preprocessing process
 
 
 ## Run Inference
