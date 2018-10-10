@@ -5,7 +5,7 @@ Author: Tomasz Palczewski
 
 - I built a pipeline that tests different object detection algorithms that will be used for hiding the identity of persons within the uploaded still pictures.
 
-- I implemented and tested two algorithms: 
+- Two algorithms were implemented and tested: 
 
   - A standard computer vision algorithm, the Haar cascade classifier, commonly used in business aplications. This choice is motivated by the simplicity of approach and time constraints. This served as my minimum viable product and baseline that is compared to more sophisticated and challenging approaches. The Haar cascade classifier used in this project was previously trained on frontal face images. 
  
