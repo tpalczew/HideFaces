@@ -1,4 +1,4 @@
-# HideFaces.AI
+# [HideFaces.AI](http://bit.ly/HideFaces)
 Author: Tomasz Palczewski
 
 ## Main Goal
