@@ -17,7 +17,7 @@ If you would like to train Haar from scratch this post presents in detail all ne
 [https://memememememememe.me/post/training-haar-cascades](https://memememememememe.me/post/training-haar-cascades/)
  
 
-The YOLO implementation is based on Keras (high-level neural networks API). I decided to performe transfer learning for YOLO model pretrained on COCO Dataset. This projects borrows a lot of code from this git-hub repository: 
+The YOLO implementation is based on Keras (high-level neural networks API). I decided to perform transfer learning for YOLO model pretrained on COCO Dataset. This projects borrows a lot of code from this git-hub repository: 
 
 [https://github.com/experiencor/keras-yolo2](https://github.com/experiencor/keras-yolo2)
 
@@ -27,8 +27,8 @@ The YOLO implementation is based on Keras (high-level neural networks API). I de
 </p>
 
 
-## Setup, requisites, Environment Settings, and tests
-- Clone repo, set environment variables and install needed libraries
+## Setup, requisites, environment Settings, and tests
+- To clone repo, set environment variables and install needed libraries
 ```
 git clone https://github.com/tpalczew/HideFaces.git
 cd HideFaces
@@ -36,10 +36,10 @@ source ./build/environment.sh
 pip install -r build/requirements.txt
 ```
 
-The project was developed and tested on AWS E2 instance using Deep Learning AMI (Ubuntu) Version 15.0 (ami-0b43cec40e1390f34)
+This project was developed and tested on AWS E2 instance using Deep Learning AMI (Ubuntu) Version 15.0 (ami-0b43cec40e1390f34)
 using python3. The pip freez for this specific setting is shown [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt)
 
-- All tests are placed in the tests directory. To run tests:
+- All tests are placed in the HideFaces/tests/ directory. To run tests:
 ```
 cd tests
 python tests.py
@@ -48,7 +48,14 @@ as an output one should see a similar output:
 <p align="center">
   <img src="static/test_out.png" width="80%">
 </p>
+This scrip will perform nine different simple tests of different parts of the code such as tests of
+- function to calculate an intersection over union value for two bounding boxes
 
+- interval overlap function that is used during the calculation of an intersection over union value
+
+- sigmoid and softmax functions
+
+- correctnes of the data shapes after preprocessing process
 
 
 ## Run Inference
@@ -64,12 +71,13 @@ The default model is a Haar Cascade Classifier
 
 ## Serve Model
 
-I prepared the Flask webapp that you can run as follows:
+I prepared a Flask webapp that you can activate using app_flask.py script
 
 ```
 python app_flask.py
 ```
-than browse to http://localhost:5000 and you should see options to a select model, blur type, and upload your picture. 
+
+and than browse to http://localhost:5000 and as an otcome you should see options to a select model, blur type, and upload your picture. 
 
 <p align="center">
   <img src="static/flask.png" width="80%">
@@ -84,30 +92,27 @@ and drew bounding boxes using RectLabel software. As the number of examples was 
 
 ## Transfer learning for YOLO
 
-The script, retrain_yolo_v2.py, to retrain yolo algorithm is located in 
+The script (retrain_yolo_v2.py) to retrain yolo algorithm is located in 
 
-src/preprocess
+src/preprocess/
 
-it needs yolo coco weights, yolo.weights, that should be located in data/preprocessed/model_weights/ directory
+it needs yolo coco weights (yolo.weights) that should be located in data/preprocessed/model_weights/ directory.
+In addition, images and annotations for re-training should be located in the follows locations:
 
-Images and annotations for re-training should be located as follows:
+ - train image folder = /data/raw/face/large/train/
 
-train image folder = /data/raw/face/large/train/
+ - train annotation folder = /data/raw/face/large/train_ann/
 
-train annotation folder = /data/raw/face/large/train_ann/
+ - valid image folder = /data/raw/face/large/val/
 
-valid image folder = /data/raw/face/large/val/
-
-valid annotation folder = /data/raw/face/large/val_ann/
+ - valid annotation folder = /data/raw/face/large/val_ann/
 
 To run retraining script:
 ```
 python retrain_yolo_v2.py --out_model serialized_model_to_json --out_weights serialized_weights --out_full serialized_full_model
 ```
 
-it will also store all the configuration information to /data/preprocessed/config_yolo.json
-
-
+it will store all the configuration information to /data/preprocessed/config_yolo.json
 
 
 
