@@ -17,7 +17,7 @@ If you would like to train Haar from scratch this post presents in detail all ne
 [https://memememememememe.me/post/training-haar-cascades](https://memememememememe.me/post/training-haar-cascades/)
  
 
-The YOLO implementation is based on Keras (high-level neural networks API). I decided to perform transfer learning for YOLO model pretrained on COCO Dataset. This projects borrows a lot of code from this git-hub repository: 
+The YOLO implementation is based on Keras (high-level neural networks API). I decided to perform transfer learning for YOLO model that was previously trained on [COCO Dataset](http://cocodataset.org). This project borrows a lot of code from this git-hub repository: 
 
 [https://github.com/experiencor/keras-yolo2](https://github.com/experiencor/keras-yolo2)
 
