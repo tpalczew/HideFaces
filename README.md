@@ -1,15 +1,15 @@
 # HideFaces.AI
 Author: Tomasz Palczewski
 
-## Motivation for this project:
-- “Dealing with privacy, both legal requirements and social norms, is hard but necessary” John Hanke, director of Google Earth and Google Maps
-
-- Extremely hard task that has not been really fully solved so far as even one missed detection may have a huge legal consequences
-
 ## Main Goal
 
-- My main goal was to build a pipeline that tests different Deep Learning algorithms available on the market and study their efficiency / misclassification examples for the specific task of face anonymization. In this project, Idecided to implement and test two algorithms: Haar Cascade Classifier and You Only Look Once (YOLO) deep learning single stage detector. 
-To produce a minimum viable product quickly, I decide to use previously trained Haar Classifier (trained on frontal face images). 
+- My main goal was to build a pipeline that tests different object detection algorithms that might be used for an automatic anonimization of faces in still pictures
+
+- I decided to implement and test two algorithms: 
+
+  - Simple Machine Learning algorithm, Haar Cascade Classifier, that is commonly used in business aplication. This choice was motivated by the simplicity of approach and time constraints. I wanted to obtain a minimum viable product quickly and from this point move on to more sophisticated and challenging approaches. I decide to use previously trained Haar Classifier (trained on frontal face images). 
+ 
+  - Deep Learning algorithm from single stage detectors family, You Only Look Once (YOLO) deep learning single stage detector. 
 
 
 If you would like to train Haar from scratch this post presents in detail all necessary steps: 
@@ -27,31 +27,18 @@ The YOLO implementation is based on Keras (high-level neural networks API). I de
 </p>
 
 
-## Setup
-- Clone repo
+## Setup, requisites, Environment Settings, and tests
+- Clone repo, set environment variables and install needed libraries
 ```
 git clone https://github.com/tpalczew/HideFaces.git
 cd HideFaces
-```
-
-## Requisites
-- To download all needed requisites
-```
+source ./build/environment.sh
 pip install -r build/requirements.txt
 ```
+
 The project was developed and tested on AWS E2 instance using Deep Learning AMI (Ubuntu) Version 15.0 (ami-0b43cec40e1390f34)
-using python3.
+using python3. The pip freez for this specific setting is shown [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt)
 
-The pip freez for this specific setting is shown [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt)
-
-
-## Environment Settings
-```
-source ./build/environment.sh
-```
-
-
-## Test
 - All tests are placed in the tests directory. To run tests:
 ```
 cd tests
@@ -91,7 +78,7 @@ than browse to http://localhost:5000 and you should see options to a select mode
 
 ## Datasets & Data Augmentation
 
-At the end, I decided to only focus on examples from three datasets: WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and own pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
+At the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
 and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I haven't perfrmed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this git-hub repo [link](https://github.com/Paperspace/DataAugmentationForObjectDetection)
 
 
