@@ -3,7 +3,7 @@ Author: Tomasz Palczewski
 
 ## Main Goal
 
-- My main goal was to build a pipeline that tests different object detection algorithms that might be used for an automatic anonimization of faces in still pictures
+- The main goal was to build a pipeline that tests different object detection algorithms that might be used for an automatic anonimization of faces in still pictures
 
 - I decided to implement and test two algorithms: 
 
