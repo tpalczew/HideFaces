@@ -98,7 +98,7 @@ and than browse to http://localhost:5000 and as an outcome you should see option
 ## Datasets & Data Augmentation
 
 In the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
-and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I have not performed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this GitHub repo [link](https://github.com/Paperspace/DataAugmentationForObjectDetection)
+and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I have not performed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this [GitHub repo](https://github.com/Paperspace/DataAugmentationForObjectDetection)
 
 
 ## Transfer learning for YOLO
