@@ -74,10 +74,10 @@ Face detection and blurring on a single image may be performed using command lin
 ```
 python app.py --infile /dir/subdir/file.jpg --outfile /dir/subdir/file_blur.jpg --blur blur_type --model model_type
 ```
-Available blur types are as follows: Median Blur (use medianBlur), Gaussian Blur (use GaussianBlur), Bilateral Filter (use bilateralFilter), Averaging (use blur). The default blur is a Median Blur. 
+Available blur types are as follows: median blur (use medianBlur), Gaussian blur (use GaussianBlur), bilateral filter (use bilateralFilter), averaging (use blur). The default blur is a 'median blur'. 
 
-There are two models that can be used to detect faces: Haar Cascade Classifier (use haar) or YOLO (use yolov2).
-The default model is a Haar Cascade Classifier
+There are two models that can be used to detect faces: Haar cascade classifier (use haar) or YOLO (use yolov2).
+The default model is a Haar cascade classifier.
 
 
 ## Serve Model
@@ -107,7 +107,7 @@ The script (retrain_yolo_v2.py) to retrain yolo algorithm is located in
 
 src/preprocess/
 
-it needs yolo coco weights ([yolo.weights](https://www.dropbox.com/s/inlbuzv4jylsksr/yolo.weights?dl=0)) that should be located in data/preprocessed/model_weights/ directory.
+it needs YOLO COCO weights ([yolo.weights](https://www.dropbox.com/s/inlbuzv4jylsksr/yolo.weights?dl=0)) that should be located in data/preprocessed/model_weights/ directory.
 In addition, images and annotations for retraining should be located in the following locations:
 
  - train image folder = /data/raw/face/large/train/
