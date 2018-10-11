@@ -15,15 +15,6 @@ Author: Tomasz Palczewski, Artificial Intelligence Fellow at [Insight Data Scien
 
 
 If one would like to train Haar from scratch, this post presents all necessary steps in detail:
-=======
-- Two algorithms were implemented and tested: 
-
-  - A standard computer vision algorithm, the [Haar cascade classifier](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf), commonly used in business aplications. This choice is motivated by the simplicity of approach and time constraints. This model served as a core of my minimum viable product and baseline that is compared to more sophisticated and challenging approaches. The Haar cascade classifier used in this project was previously trained on [frontal face images](https://github.com/opencv/opencv/tree/master/data/haarcascades/). 
- 
-  - A state-of-the-art deep learning algorithm, from the single stage detector family, [You Only Look Once](https://arxiv.org/pdf/1506.02640.pdf) (YOLO). YOLO looks at the whole image at test time so its predictions are informed by global context in the image. At the same time a single neural network predicts bounding boxes and class probabilities directly that allows to perform end-to-end optimization directly on detection performance. 
-
-
-If one would like to train Haar from scratch, this post presents all necessary steps in detail: 
 
 [https://memememememememe.me/post/training-haar-cascades](https://memememememememe.me/post/training-haar-cascades/)
 
@@ -124,22 +115,6 @@ In addition, images and annotations for retraining should be located in the foll
  - train annotation folder = /data/raw/face/large/train_ann/
 
  - valid image folder = /data/raw/face/large/val/
-
-=======
-The script (retrain_yolo_v2.py) to retrain yolo algorithm is located in 
-
-src/preprocess/
-
-it needs YOLO COCO weights ([yolo.weights](https://www.dropbox.com/s/inlbuzv4jylsksr/yolo.weights?dl=0)) that should be located in data/preprocessed/model_weights/ directory.
-In addition, images and annotations for retraining should be located in the following locations:
-
- - train image folder = /data/raw/face/large/train/
-
- - train annotation folder = /data/raw/face/large/train_ann/
-
- - valid image folder = /data/raw/face/large/val/
-
- - valid annotation folder = /data/raw/face/large/val_ann/
 
 To run retraining script:
 ```
