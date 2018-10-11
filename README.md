@@ -11,7 +11,7 @@ Author: Tomasz Palczewski, Artificial Intelligence Fellow at [Insight Data Scien
 
   - A standard computer vision algorithm, the [Haar cascade classifier](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf), commonly used in business aplications. This choice is motivated by the simplicity of approach and time constraints. This model served as a core of my minimum viable product and baseline that is compared to more sophisticated and challenging approaches. The Haar cascade classifier used in this project was previously trained on [frontal face images](https://github.com/opencv/opencv/tree/master/data/haarcascades/). 
  
-  - A state-of-the-art deep learning algorithm, from the single stage detector family, [You Only Look Once](https://arxiv.org/pdf/1506.02640.pdf) (YOLO). YOLO looks at the whole image at test time so its predictions are informed by global context in the image. In the same time a single neural network predicts bounding boxes and class probabilities directly that allows to perform end-to-end optimization directly on detection performance. 
+  - A state-of-the-art deep learning algorithm, from the single stage detector family, [You Only Look Once](https://arxiv.org/pdf/1506.02640.pdf) (YOLO). YOLO looks at the whole image at test time so its predictions are informed by global context in the image. At the same time a single neural network predicts bounding boxes and class probabilities directly that allows to perform end-to-end optimization directly on detection performance. 
 
 
 If one would like to train Haar from scratch, this post presents all necessary steps in detail: 
@@ -46,7 +46,7 @@ One needs to move these weights to the following locations:
 
 
 This project was developed and tested on AWS E2 instance using Deep Learning AMI (Ubuntu) Version 15.0 (ami-0b43cec40e1390f34)
-using python3. The pip freez for this specific setting can be found [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt).
+using python3. The pip freeze for this specific setting can be found [here](https://github.com/tpalczew/HideFaces/blob/master/static/aws-e2-requirements.txt).
 
 - All tests are placed in the HideFaces/tests/ directory. The tests.py script runs all tests:
 ```
@@ -58,7 +58,7 @@ as an output one should see a similar information:
   <img src="static/test_out.png" width="80%">
 </p>
 
-The tests.py scrip performs nine different tests that target different parts of the code. The tested parts are as follows:
+The tests.py script performs nine different tests that target different parts of the code. The tested parts are as follows:
 
 - function to calculate an intersection over union value for two bounding boxes
 
@@ -66,7 +66,7 @@ The tests.py scrip performs nine different tests that target different parts of 
 
 - sigmoid and softmax functions
 
-- correctnes of the data shapes (for both algorithms: Haar and YOLO) after preprocessing process
+- correctness of the data shapes (for both algorithms: Haar and YOLO) after preprocessing process
 
 
 ## Run Inference
@@ -88,7 +88,7 @@ I prepared a Flask webapp that you can activate using app_flask.py script
 python app_flask.py
 ```
 
-and than browse to http://localhost:5000 and as an otcome you should see options to a select model, blur type, and upload your picture. 
+and than browse to http://localhost:5000 and as an outcome you should see options to a select model, blur type, and upload your picture. 
 
 <p align="center">
   <img src="static/flask.png" width="80%">
@@ -97,8 +97,8 @@ and than browse to http://localhost:5000 and as an otcome you should see options
 
 ## Datasets & Data Augmentation
 
-At the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
-and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I haven't perfrmed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this git-hub repo [link](https://github.com/Paperspace/DataAugmentationForObjectDetection)
+In the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
+and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I have not performed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this GitHub repo [link](https://github.com/Paperspace/DataAugmentationForObjectDetection)
 
 
 ## Transfer learning for YOLO
@@ -108,7 +108,7 @@ The script (retrain_yolo_v2.py) to retrain yolo algorithm is located in
 src/preprocess/
 
 it needs yolo coco weights ([yolo.weights](https://www.dropbox.com/s/inlbuzv4jylsksr/yolo.weights?dl=0)) that should be located in data/preprocessed/model_weights/ directory.
-In addition, images and annotations for re-training should be located in the following locations:
+In addition, images and annotations for retraining should be located in the following locations:
 
  - train image folder = /data/raw/face/large/train/
 
