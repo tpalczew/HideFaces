@@ -1,7 +1,7 @@
 import os
 import logging
 from PIL import Image
-from model import FaceCascade, FindFaces, Blur, yolo_v2_model
+from model import FaceCascade, FindFaces, Blur, yolo_v2_model, Blur_yolo
 from load_data import load_pictures_haar, load_pictures_yolo
 import matplotlib.pyplot as plt
 from optparse import OptionParser
@@ -17,9 +17,9 @@ logger = logging.getLogger("logger-app.py")
 
 parser = OptionParser()
 parser.allow_interspersed_args = True
-parser.add_option("-i", "--infile",default="/home/ubuntu/Insight/data/raw/face/test/18_Concerts_Concerts_18_1009.jpg",
+parser.add_option("-i", "--infile",default="/home/ubuntu/Insight/data/raw/face/test/187b5572-391b-41a0-817f-542322b81f00___DSC06733A.jpg",
                   dest="INFILE", help="input picture in JPG format (full path)")
-parser.add_option("-o", "--outfile",default="/home/ubuntu/Insight/data/raw/face/18_Concerts_Concerts_18_1009_blur_Haar.jpg",
+parser.add_option("-o", "--outfile",default="/home/ubuntu/Insight/data/raw/face/187b5572-391b-41a0-817f-542322b81f00___DSC06733A_blur_Haar.jpg",
                   dest="OUTFILE", help="output picture (full path)")
 parser.add_option("-b", "--blur", default="medianBlur",
                   dest="BLUR", help="blur type (medianBlur, GaussianBlur, bilateralFilter, blur)")
@@ -38,7 +38,7 @@ logger.info('--infile = %s', imagePath)
 logger.info('--outfile = %s', outPath)
 
 
-if blurMode in ['medianBlur', 'GaussianBlur', 'bilateralFilter', 'blur']:
+if blurMode in ['medianBlur', 'GaussianBlur', 'bilateralFilter', 'blur', 'none']:
     blur_mode = blurMode
     logger.info('--blur = %s', blurMode)
 else:
@@ -95,7 +95,8 @@ if architecture == 'yolov2':
                       nb_class=1)
     logger.info('Yolo found %s faces', len(boxes))
     LABELS = ['face']
-    image = draw_boxes(image, boxes, labels=LABELS)
+    image = Blur_yolo(image, boxes, blur_mode, labels=LABELS)
+
     logger.info('Face blurring finished')
     plt.imshow(image[:,:,::-1]);
     plt.savefig(outPath)

@@ -44,15 +44,18 @@ def Blur(image, faces, blur_mode):
         bounded_face = image[y:y+h, x:x+w]
         if blur_mode == "medianBlur":
             bounded_face = cv2.medianBlur(bounded_face, 15)
+            image[y:y+bounded_face.shape[0], x:x+bounded_face.shape[1]] = bounded_face
         if blur_mode == "GaussianBlur":
             bounded_face = cv2.GaussianBlur(bounded_face,(15,15),0)
+            image[y:y+bounded_face.shape[0], x:x+bounded_face.shape[1]] = bounded_face
         if blur_mode == "bilateralFilter":
             bounded_face = cv2.bilateralFilter(bounded_face,500,100,100)
+            image[y:y+bounded_face.shape[0], x:x+bounded_face.shape[1]] = bounded_face
         if blur_mode == "blur":
             bounded_face = cv2.blur(bounded_face,(15,15))
+            image[y:y+bounded_face.shape[0], x:x+bounded_face.shape[1]] = bounded_face
         if blur_mode == "none":
-            bounded_face = cv2.rectangle(image, (xmin,ymin), (xmax,ymax), (0,255,0), 3)
-        image[y:y+bounded_face.shape[0], x:x+bounded_face.shape[1]] = bounded_face
+            cv2.rectangle(image, (x,y), (x+w,y+h), (0,255,0), 3)
         x, y, w,h = [0,0,0,0]
     rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     return rgb_image
@@ -241,3 +244,37 @@ def yolo_v2_find_faces(image, model):
                       anchors=ANCHORS,
                       nb_class=CLASS)
     return boxes
+
+def Blur_yolo(image, boxes, blur_mode, labels):
+    image_h, image_w, _ = image.shape
+
+    for box in boxes:
+        xmin = int(box.xmin*image_w)
+        ymin = int(box.ymin*image_h)
+        xmax = int(box.xmax*image_w)
+        ymax = int(box.ymax*image_h)
+
+        bounded_face = image[ymin:ymax, xmin:xmax]
+        if blur_mode == "medianBlur":
+            bounded_face = cv2.medianBlur(bounded_face, 15)
+            image[ymin:ymin+bounded_face.shape[0], xmin:xmin+bounded_face.shape[1]] = bounded_face
+        if blur_mode == "GaussianBlur":
+            bounded_face = cv2.GaussianBlur(bounded_face,(15,15),0)
+            image[ymin:ymin+bounded_face.shape[0], xmin:xmin+bounded_face.shape[1]] = bounded_face
+        if blur_mode == "bilateralFilter":
+            bounded_face = cv2.bilateralFilter(bounded_face,500,100,100)
+            image[ymin:ymin+bounded_face.shape[0], xmin:xmin+bounded_face.shape[1]] = bounded_face
+        if blur_mode == "blur":
+            bounded_face = cv2.blur(bounded_face,(15,15))
+            image[ymin:ymin+bounded_face.shape[0], xmin:xmin+bounded_face.shape[1]] = bounded_face
+        if blur_mode == "none":
+            cv2.rectangle(image, (xmin,ymin), (xmax,ymax), (0,255,0), 3)
+            cv2.putText(image,
+                        labels[box.get_label()] + ' ' + str(box.get_score()),
+                        (xmin, ymin - 13),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        1e-3 * image_h,
+                        (0,255,0), 2)
+        xmin, ymin, xmax,ymax = [0,0,0,0]
+    #rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    return image
