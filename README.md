@@ -38,7 +38,7 @@ source ./build/environment.sh
 pip install -r build/requirements.txt
 ```
 The model weights are located online [here](https://www.dropbox.com/sh/k2s1uqnns4an1l4/AABriaeHeWELrsvug-g-IhsLa?dl=0).
-One needs to move this weights to the following locations:
+One needs to move these weights to the following locations:
 
 - /data/preprocessed/model_weights/haarcascade_frontalface_default.xml
 
