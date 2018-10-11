@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# [HideFaces.AI](http://bit.ly/HideFaces)
-=======
 # [HideFaces.AI](http://bit.ly/HideFaces) 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
 [http://bit.ly/HideFaces](http://bit.ly/HideFaces)
 
 Author: Tomasz Palczewski, Artificial Intelligence Fellow at [Insight Data Science](https://www.insightdata.ai)
@@ -11,7 +7,6 @@ Author: Tomasz Palczewski, Artificial Intelligence Fellow at [Insight Data Scien
 
 - I built a pipeline that tests different object detection algorithms that will be used for hiding the identity of persons within the uploaded still pictures.
 
-<<<<<<< HEAD
 - Two algorithms were implemented and tested:
 
   - A standard computer vision algorithm, the [Haar cascade classifier](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf), commonly used in business aplications. This choice is motivated by the simplicity of approach and time constraints. This model served as a core of my minimum viable product and baseline that is compared to more sophisticated and challenging approaches. The Haar cascade classifier used in this project was previously trained on [frontal face images](https://github.com/opencv/opencv/tree/master/data/haarcascades/).
@@ -29,16 +24,10 @@ If one would like to train Haar from scratch, this post presents all necessary s
 
 
 If one would like to train Haar from scratch, this post presents all necessary steps in detail: 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
 
 [https://memememememememe.me/post/training-haar-cascades](https://memememememememe.me/post/training-haar-cascades/)
 
-<<<<<<< HEAD
-
 The YOLO implementation is based on Keras (high-level neural networks API). I decided to perform transfer learning for YOLO model that was previously trained on [COCO Dataset](http://cocodataset.org). This project borrows a lot of code from this git-hub repository:
-=======
-The YOLO implementation is based on Keras (high-level neural networks API). I decided to perform transfer learning for YOLO model that was previously trained on [COCO Dataset](http://cocodataset.org). This project borrows a lot of code from this git-hub repository: 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
 
 [https://github.com/experiencor/keras-yolo2](https://github.com/experiencor/keras-yolo2)
 
@@ -93,11 +82,9 @@ Face detection and blurring on a single image may be performed using command lin
 ```
 python app.py --infile /dir/subdir/file.jpg --outfile /dir/subdir/file_blur.jpg --blur blur_type --model model_type
 ```
-<<<<<<< HEAD
+
 Available blur types are as follows: median blur (use medianBlur), Gaussian blur (use GaussianBlur), bilateral filter (use bilateralFilter), averaging (use blur). The default blur is a 'median blur'.
-=======
-Available blur types are as follows: median blur (use medianBlur), Gaussian blur (use GaussianBlur), bilateral filter (use bilateralFilter), averaging (use blur). The default blur is a 'median blur'. 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
+
 
 There are two models that can be used to detect faces: Haar cascade classifier (use haar) or YOLO (use yolov2).
 The default model is a Haar cascade classifier.
@@ -111,11 +98,7 @@ I prepared a Flask webapp that you can activate using app_flask.py script
 python app_flask.py
 ```
 
-<<<<<<< HEAD
-and than browse to http://localhost:5000 and as an outcome you should see options to a select model, blur type, and upload your picture.
-=======
 and than browse to http://localhost:5000 and as an outcome you should see options to a select model, blur type, and upload your picture. 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
 
 <p align="center">
   <img src="static/flask.png" width="80%">
@@ -124,17 +107,11 @@ and than browse to http://localhost:5000 and as an outcome you should see option
 
 ## Datasets & Data Augmentation
 
-<<<<<<< HEAD
-In the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download)
-=======
-In the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
-and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I have not performed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this [GitHub repo](https://github.com/Paperspace/DataAugmentationForObjectDetection)
+In the end, I decided to only focus on examples from two public datasets, WIDER face ([link](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)), Kaggle face dataset ([link](https://www.kaggle.com/c/face-recognition/data)), and my pictures. To colect own pictures, I used google_images_download.py script from [https://github.com/hardikvasa/google-images-download](https://github.com/hardikvasa/google-images-download) and drew bounding boxes using RectLabel software. As the number of examples was sufficient for my task, I have not performed data augmentation. Hovever, if you need to augment your dataset for object detection, one of many possible options is to use this [GitHub repo](https://github.com/Paperspace/DataAugmentationForObjectDetection)
 
 
 ## Transfer learning for YOLO
 
-<<<<<<< HEAD
 The script (retrain_yolo_v2.py) to retrain yolo algorithm is located in
 
 src/preprocess/
@@ -162,7 +139,6 @@ In addition, images and annotations for retraining should be located in the foll
 
  - valid image folder = /data/raw/face/large/val/
 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
  - valid annotation folder = /data/raw/face/large/val_ann/
 
 To run retraining script:
@@ -171,11 +147,10 @@ python retrain_yolo_v2.py --out_model serialized_model_to_json --out_weights ser
 ```
 
 it will store all the configuration information to /data/preprocessed/config_yolo.json
-<<<<<<< HEAD
+
 =======
 
 
->>>>>>> 82650a11a908d1f3a6dd8168fe29f8fc499468cd
 
 
 ## Project presentation
