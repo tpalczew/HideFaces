@@ -24,7 +24,7 @@ The YOLO implementation is based on Keras (high-level neural networks API). I de
 
 
 <p align="center">
-  <img src="static/Images-AT.001.jpeg" width="80%" title="Now you see me (left), Now you don't (right)">
+  <img src="static/Images-AT.001.jpg" width="80%" title="Now you see me (left), Now you don't (right)">
 </p>
 
 
