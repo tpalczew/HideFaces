@@ -89,7 +89,7 @@ I prepared a Flask webapp that you can activate using app_flask.py script
 python app_flask.py
 ```
 
-and than browse to http://localhost:5000 and as an outcome you should see options to a select model, blur type, and upload your picture. 
+and than browse to http://localhost:5000 and as an outcome you should see options to select model, blur type, and upload your picture. 
 
 <p align="center">
   <img src="static/flask.png" width="80%">
