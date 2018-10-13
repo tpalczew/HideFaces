@@ -11,7 +11,7 @@ Author: Tomasz Palczewski, Artificial Intelligence Fellow at [Insight Data Scien
 
   - A standard computer vision algorithm, the [Haar cascade classifier](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf), commonly used in business aplications. This choice is motivated by the simplicity of approach and time constraints. This model served as a core of my minimum viable product and baseline that is compared to more sophisticated and challenging approaches. The Haar cascade classifier used in this project was previously trained on [frontal face images](https://github.com/opencv/opencv/tree/master/data/haarcascades/).
 
-  - A state-of-the-art deep learning algorithm, from the single stage detector family, [You Only Look Once](https://arxiv.org/pdf/1506.02640.pdf) (YOLO). YOLO looks at the whole image at test time so its predictions are informed by global context in the image. At the same time a single neural network predicts bounding boxes and class probabilities directly that allows to perform end-to-end optimization directly on detection performance.
+  - A state-of-the-art deep learning algorithm, from the single stage detector family, [You Only Look Once](https://arxiv.org/pdf/1506.02640.pdf) (YOLO). YOLO looks at the whole image at test time, so its predictions are informed by a global context in the image. At the same time a single neural network predicts bounding boxes and class probabilities that allows to perform end-to-end optimization directly on detection performance.
 
 
 If one would like to train Haar from scratch, this post presents all necessary steps in detail:
