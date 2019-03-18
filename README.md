@@ -115,6 +115,8 @@ In addition, images and annotations for retraining should be located in the foll
  - train annotation folder = /data/raw/face/large/train_ann/
 
  - valid image folder = /data/raw/face/large/val/
+ 
+ - valid annotation folder = /data/raw/face/large/val_ann/
 
 To run retraining script:
 ```
