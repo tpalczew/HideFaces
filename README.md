@@ -107,7 +107,7 @@ The script (retrain_yolo_v2.py) to retrain yolo algorithm is located in
 
 src/preprocess/
 
-it needs YOLO COCO weights ([yolo.weights](https://www.dropbox.com/s/inlbuzv4jylsksr/yolo.weights?dl=0)) that should be located in data/preprocessed/model_weights/ directory.
+it needs YOLO COCO weights ([yolo.weights](https://www.dropbox.com/s/so0ughetp8132w7/yolo.weights?dl=0)) that should be located in data/preprocessed/model_weights/ directory.
 In addition, images and annotations for retraining should be located in the following locations:
 
  - train image folder = /data/raw/face/large/train/
