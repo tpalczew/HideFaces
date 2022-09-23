@@ -141,7 +141,7 @@ plotly==2.7.0
 pluggy==0.6.0
 ply==3.11
 prompt-toolkit==1.0.15
-protobuf==3.6.0
+protobuf==3.18.3
 protobuf3-to-dict==0.1.5
 psutil==5.4.7
 psycopg2==2.7.5
